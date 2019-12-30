@@ -36,7 +36,15 @@ class Reunion
     summary = final_owed.map do |participant|
       participant
     end.flatten
-    string = summary*", "
-    p "#{string[0..4]}: #{string[7..9]} \n#{string[12..17]}: #{string[20..22]}\n#{string[25..29]}: #{string[32..33]}"
+
+    output = ""
+    until summary.empty?
+      if summary.length == 2
+        output += "#{summary.shift}: #{summary.shift}"
+      else
+        output += "#{summary.shift}: #{summary.shift}\n"
+      end
+    end
+    output
   end
 end

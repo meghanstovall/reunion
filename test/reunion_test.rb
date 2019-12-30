@@ -72,7 +72,8 @@ class ReunionTest < Minitest::Test
     activity_2.add_participant("Luther", 60)
     activity_2.add_participant("Louis", 0)
     reunion.add_activity(activity_2)
-    expected = "Maria: -10 \nLuther: -30\nLouis: 40"
+    expected = "Maria: -10\nLuther: -30\nLouis: 40"
+
     assert_equal expected, reunion.summary
   end
 end
